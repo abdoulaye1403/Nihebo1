@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Single Starts Here -->
+<div class="single-product">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>Article</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="product-slider">
+            <div>
+              <ul class="">
+                <li>
+                  <img src="{{article.image.url }}" style="height: 300px; width: 430px;"/>
+                </li>
+               <!-- items mirrored twice, total of 12 -->
+              </ul>
+              
+            </div>
+            <div id="carousel" class="flexslider">
+              <ul class="slides">
+                <li>
+                  <img src="{% static 'img/appareil-photo.jpg' %}" style="height: 300px; width: 430px;"/>
+                </li>
+                
+                <li>
+                  <img src="{% static 'img/boomer.jpg' %}" style="height: 300px; width: 430px;"/>
+                </li>
+                
+                <li>
+                  <img src="{% static 'img/ipad.jpg' %}" style="height: 300px; width: 430px;"/>
+                </li>
+                
+                <li>
+                  <img src="{% static 'img/PCouPCPortable_01.png' %}" style="height: 300px;"/>
+                </li>
+                
+                <!-- items mirrored twice, total of 12 -->
+              </ul>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-content">
+            <h4>{{article.title}}</h4>
+            <h6>{{article.prix}}</h6>
+            <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu. Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id, dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
+            <span>4 en stock</span>
+            <form action="" method="get">
+              <label for="quantity">Quantité:</label>
+              <input name="quantity" type="quantity" class="quantity-text" id="quantity" 
+                  onfocus="if(this.value == '1') { this.value = ''; }" 
+                  onBlur="if(this.value == '') { this.value = '1';}"
+                  value="1">
+              <input type="submit" class="button" value="Commander">
+            </form>
+            <div class="down-content">
+              <div class="categories">
+                <h6>Catégories: <span><a href="#">légumes</a>,<a href="#">fruits</a>,<a href="#">céréales</a></span></h6>
+              </div>
+              <div class="share">
+                <h6>Partager: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Single Page Ends Here -->
+
+
+  <!-- Similar Starts Here -->
+  <div class="featured-items">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h1>Produits que vous pourriez aimer aussi:</h1>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="owl-carousel owl-theme">
+            {% for art in aer %}
+              <div class="featured-item">
+                <img src="{{art.image.url}}" alt="#" style="height: 150px;">
+                <h4>{{art.title}}</h4>
+                <h6>{{art.prix}}FCFA</h6>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Similar Ends Here -->
+
+  {% endblock %}

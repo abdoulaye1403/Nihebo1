@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+   
+</head>
+<body>
+
+    
+            {% block content %}
+             <!-- Page Content -->
+    
+    <!-- Featured Starts Here -->
+    <div class="featured-items">
+        <div class="container col-md-12 col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="section-heading">
+                  <div class="line-dec"></div>
+                  <h1>Produits Electroménagers</h1>
+                </div>
+              </div>
+            {% for electromenager in electromenager %}
+            <div class="col-md-6 col-lg-3 col-xl-3 col-12 ">
+
+              <div class="card">
+                <a href="{% url 'detail_electromenager' electromenager.id %}"><img src="{{electromenager.image.url}}" alt="card image cap" class="card-img-top" style="height: 250px;"></a>
+                <div class="card-body" style="height: 150px;">
+                    <h4 class="card-title"><a href="{% url 'detail_electromenager' electromenager.id %}">{{electromenager.title}}</a></h4>
+                    <p class="card-text">{{electromenager.prix}}FCA</p>
+            
+                    <a href="{% url 'detail_electromenager' electromenager.id %}" class="btn btn-primary" style="width: 150px;">Plus de detail</a>
+                </div>
+                   
+                    
+                </div>
+               
+            </div>
+      
+            {% endfor %}
+            
+            </div>
+        </div>
+    </div>
+      
+      <!-- Featred Ends Here -->
+             {% endblock %}
+    
+           
+          
+</body>
+</html>

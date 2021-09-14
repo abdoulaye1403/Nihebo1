@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+   
+</head>
+<body>
+
+    
+            {% block content %}
+             <!-- Page Content -->
+    
+    <!-- Featured Starts Here -->
+    <div class="featured-items">
+        <div class="container col-md-12 col-sm-12 col-lg-12">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="section-heading">
+                  <div class="line-dec"></div>
+                  <h1>Catégories de Produits</h1>
+                </div>
+              </div>
+            <div class="col-md-6 col-lg-3 col-xl-3 col-12 ">
+
+              <div class="card">
+                <a href="{% url 'alimentaire' %}"><img src="{% static 'img/alimentaire.jpg' %}" alt="card image cap" class="card-img-top" style="height: 200px;"></a>
+                <div class="card-body" style="height: 150px;">
+                    <h4 class="card-title"><a href="{% url 'alimentaire' %}">Alimentaires</a></h4>
+                    <p class="card-text" style="height: 50px;">Produits alimentaire,bon pour la santé</p>
+
+                    
+                    <a href="{% url 'alimentaire' %}" class="btn btn-primary" style="width: 150px;">Voir les Produits</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 col-xl-3 col-12 ">
+
+              <div class="card">
+                <a href="{% url 'vetement' %}"><img src="{% static 'img/vetement.jpg' %}" alt="card image cap" class="card-img-top" style="height: 200px;"></a>
+                <div class="card-body" style="height: 150px;">
+                    <h4 class="card-title"><a href="{% url 'vetement' %}">Vêtements</a></h4>
+                    <p class="card-text" style="height: 50px;">Vêtements pour hommes,femmes et enfants</p>
+
+                    
+                    <a href="{% url 'vetement' %}" class="btn btn-primary" style="width: 150px;">Voir les Produits</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 col-xl-3 col-12 ">
+
+              <div class="card">
+                <a href="{% url 'electronique' %}"><img src="{% static 'img/electronique.jpg' %}" alt="card image cap" class="card-img-top" style="height: 200px;"></a>
+                <div class="card-body" style="height: 150px;">
+                    <h4 class="card-title"><a href="{% url 'electronique' %}">Electroniques</a></h4>
+                    <p class="card-text" style="height: 50px;">Produits électroniques</p>
+
+                    
+                    <a href="{% url 'electronique' %}" class="btn btn-primary" style="width: 150px;">Voir les Produits</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 col-xl-3 col-12 ">
+
+              <div class="card">
+                <a href="{% url 'electromenager' %}"><img src="{% static 'img/electromenager.jpg' %}" alt="card image cap" class="card-img-top" style="height: 200px;"></a>
+                <div class="card-body" style="height: 150px;">
+                    <h4 class="card-title"><a href="{% url 'electromenager' %}">Electromenagers</a></h4>
+                    <p class="card-text" style="height: 50px;">Produits élecroménagers</p>
+
+                    
+                    <a href="{% url 'electromenager' %}" class="btn btn-primary" style="width: 150px;">Voir les Produits</a>
+                </div>
+              </div>
+            </div>
+  
+                    
+                    
+                
+                    
+           
+            </div>
+        </div>
+    </div>
+      
+      <!-- Featred Ends Here -->
+             {% endblock %}
+    
+           
+          
+</body>
+</html>
